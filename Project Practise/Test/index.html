@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Test</title>
+    <style>
+        input{
+            height:20px;
+            padding: 5px;
+        }
+        button{
+            padding: 8px 20px;
+        }
+    </style>
+</head>
+<body>
+
+
+    
+
+    <!-- <ul class="link" style="height:100px">
+        <li>home</li>
+        <li>about</li>
+        <li>product</li>
+        <li>gallery</li>
+        <li>contact</li>
+    </ul> -->
+
+    <!-- <button id="red">Red Color</button> -->
+    <!-- <button>Create New Elemnet</button> -->
+    <!--<div id="operators">    
+        <button class="start">Start</button>
+        <button class="stop">Stop</button>
+    </div> -->
+    <!-- <button class="start">Start</button>
+    <button class="stop">Stop</button> -->
+
+    <!-- <button id="color">Click to apply</button> -->
+    <!-- <input type="text" id="getData">
+    <button type="button" id="submit">Add</button>
+    <div id="showResult"></div> -->
+    <div class="dropdown-menu">
+
+    </div>
+
+    <script>
+        const number = [1,2,3,4,5]
+        number[10] = 11
+        console.log(number);
+        // const arr = ['apple','mango','banana','litchi','tomatoo'].pop()
+        // console.log(arr);
+        //  const program = [
+        //     {
+        //         id: 1,
+        //         name: 'php',
+        //         type: 'backend'
+        //     },
+        //     {
+        //         id: 2,
+        //         name: 'ruby',
+        //         type: 'backend'
+        //     },
+        //     {
+        //         id: 3,
+        //         name: 'python',
+        //         type: 'backend'
+        //     },
+        //     {
+        //         id: 4,
+        //         name: 'Javascript',
+        //         type: 'frontend'
+        //     },
+        //     {
+        //         id: 4,
+        //         name: 'jquery',
+        //         type: 'frontend'
+        //     },
+        //     {
+        //         id: 5,
+        //         name: 'react',
+        //         type: 'framework'
+        //     }
+
+        // ]
+        // console.log(typeof program)
+        // const languages = program.reduce((values, key)=>{
+        //     console.log(values)
+        //     if(!values.includes(key.type)){
+        //         values.push(key.type)
+        //     }
+        //     return values
+        // },[])
+        // console.log(languages);
+
+        // const dropdown = document.querySelector('.dropdown-menu')
+        // const menu = [
+        //     1,
+        //     2,
+        //     3,
+        //     4,
+        //     5,
+        //     6,
+        //     7,
+        //     8,
+        //     9
+        // ]
+
+        // const navigation = menu.reduce((menuItem, value) => {
+        //     console.log(value);
+        //     return menuItem + value
+        // },0)
+        // dropdown.innerHTML = navigation
+
+
+        // const vowels = /[aeiou]/ig
+        // const str = 'Ali Rehan Haider';
+        // console.log(str.match(vowels).length);
+
+        // const str = 'FAISAL'
+        // const str2 = 'REHAN HAIDER'
+
+        // String.prototype.ToLower = function () {
+        //     return this.toLowerCase()
+        // }
+        // console.log(str.ToLower());
+        // console.log(str2.ToLower());
+
+        // const result = document.getElementById('showResult')
+        // const getData = document.querySelector('#getData')
+        // const button = document.getElementById('submit')
+        // const data = []
+
+        // const retriveData = () => {
+        //     const getValue = getData.value
+        //     if(getValue){
+        //         data.push(getValue)
+        //         getValue.value = ''
+        //         showData()
+        //     }
+        // }
+        // const showData = () => {
+        //     const displayData = data.map((value,i)=>{
+        //         return `<div class="applist">
+        //                 <span>${value}</span>
+        //                 <span onclick="removeData(${i})">X</span>
+        //             </div>`
+        //     }).join('')
+        //     result.innerHTML = displayData
+        // }
+        // const removeData = (index) => {
+        //     console.log(index)
+        //     let a = data.splice(index,1)
+        //     console.log(a);
+        //     showData()
+        // }
+
+        // button.addEventListener('click', retriveData)
+
+        // const arr = [
+        //     {
+        //         name: 'faisal',
+        //         age: 34
+        //     },
+        //     {
+               
+        //     },
+        //     {
+        //         name: 'Rehan',
+        //         age: 34
+        //     },
+        //     {
+                
+        //     },
+        //     {
+        //         name: 'Asif',
+        //         age: 38
+        //     }
+        // ];
+
+        // const newArr = arr.filter(item => {
+        //    return item.age === '31'
+        // })
+        // console.log(newArr);
+
+        //ternary Operator
+        // const age = 18 <= 16 ? 'isAge' : 'notAge'
+        // console.log(age);
+
+        // let arr = [1,2,3,4,5];
+        // const newArr = arr.map(i => i)
+        // newArr.splice(1, 3)
+        // console.log('newArr:', newArr);
+        // console.log('oldArr', arr);
+
+        // const red =  document.getElementById('red')
+        // function dispalyColor(color){
+        //     return function(){
+        //         document.body.style.backgroundColor = `${color}`
+        //     }
+        // }
+        // color.onclick = dispalyColor('olive')
+
+
+        // const generateColor = () => {
+        //     let hex = '0123456789ABCDEF'
+        //     let color = '#'
+        //     for(let i = 0; i < 6; i++){
+        //         color += hex[Math.floor(Math.random() * 16)]
+        //     }
+        //     return color
+        // }
+        // //Process 1
+        // let intrValId;
+        // const Bgchanger = () => {
+        //     const changeBg = () => document.body.style.backgroundColor = generateColor()
+        //     intrValId = setInterval(changeBg, 1000)
+        // }
+        // const stopChangeColor = () => clearInterval(intrValId)
+        // document.querySelector('.start').onclick = Bgchanger
+        // document.querySelector('.stop').onclick = stopChangeColor
+
+        //Process 2
+        // let setIDInt;
+        // operators.forEach(btn => {
+        //     btn.addEventListener('click', (e) => {
+        //         const el = e.target
+        //         if(el.classList.contains('start')){
+        //             const setID = () => body.style.backgroundColor = generateColor()
+        //             setIDInt = setInterval(setID, 500)
+        //         }else{
+        //             clearInterval(setIDInt)
+        //         }
+        //     })
+        // })
+
+        // let pass = ''
+        // let str = 'ABCDEFGH01234678'
+        // for(let i = 1; i <= 8; i++){
+        //     let char = Math.floor(Math.random() * str.length)
+        //     console.log(pass = pass + str.charAt(char));
+        // }
+    
+    
+        // const program = [
+        //     {
+        //         id: 1,
+        //         name: 'php',
+        //         type: 'backend'
+        //     },
+        //     {
+        //         id: 2,
+        //         name: 'ruby',
+        //         type: 'backend'
+        //     },
+        //     {
+        //         id: 3,
+        //         name: 'python',
+        //         type: 'backend'
+        //     },
+        //     {
+        //         id: 4,
+        //         name: 'Javascript',
+        //         type: 'frontend'
+        //     },
+        //     {
+        //         id: 4,
+        //         name: 'jquery',
+        //         type: 'frontend'
+        //     },
+        //     {
+        //         id: 5,
+        //         name: 'react',
+        //         type: 'framework'
+        //     }
+
+        // ]
+        // // console.log(typeof program)
+        // const languages = program.reduce((values, key)=>{
+        //     if(!values.includes(key.type)){
+        //         values.push(key.type)
+        //     }
+        //     return values
+        // },[])
+        // console.log(languages);
+        // const product = [{
+        //     brand: 'Apple',
+        //     feature: {
+        //         camera: '12MP',
+        //         memory: '1TB'
+        //     },
+        //     color: 'Sand Black',
+        //     price: '$9999',
+        //     model: 'T50i'
+        // }]
+
+        // const list = product.map((item)=>{
+        //    const {brand, feature, color, price, model} = item
+        //    return `<h1>${brand}</h1>,<h1>${feature.camera}</h1>`
+        // })
+        // console.log(list.join(''));
+        
+
+        // const product = ['apple', 'samsung','onplus']
+        // const newProduct = [...product]
+        // console.log(product)
+        // newProduct.push('Mi')
+        // console.log(newProduct);
+
+        // fetch('https://jsonplaceholder.typicode.com/users')
+        // .then((response)=>{
+        //     return response.json()
+        // }).then((data)=>{
+        //     console.log(data[0].name);
+        // }).catch((error)=>{
+        //     console.log('something wen wrong')
+        // })
+
+
+        // const fetchAPI = async () => {
+        //     try {
+        //         const API = await fetch('https://jsonplaceholder.typicode.com/users')
+        //         const response = await API.json()
+        //         console.log(response[1].name)
+        //     } catch (error) {
+        //         const showError = error
+        //         console.log(showError)
+        //     }
+        // }
+        // fetchAPI()
+
+        // function createNewDiv(newDiv){
+        //     return function(){
+        //         document.body.appendChild(document.createElement(newDiv))
+        //     }
+        // }
+        // document.querySelector('button').onclick = createNewDiv('h1')
+
+        // const vowels = /[aeiou]/ig
+        // const str = 'faisal';
+        // console.log(str.match(vowels).length);
+
+        // function dispalyColor(colorChange){
+        //     return function(){
+        //         document.body.style.backgroundColor = `${colorChange}`
+        //     }
+        // }
+
+        // const red = document.getElementById('red').onclick = dispalyColor('red')
+
+
+        // for(let i=0; i<5; i++){
+        //     console.log(i);
+        // }
+        // function fun (a,b){
+        //     return a + b 
+        // }
+        // const sum = fun(6,...4)
+        // console.log(sum);
+
+        // function vowelsCount(str){
+        //     const vowelRegex = /[aeiou]/gi;
+        //     const strMatches = str.match(vowelRegex)
+        //     if(strMatches){
+        //         return strMatches.length
+        //     }else{
+        //         return 0;
+        //     }
+        // }
+        // str = 'apple'.match(/[aeiou]/ig)
+        // console.log(str.length);
+
+        // function dispalyColor(colorName){
+        //     return function(){
+        //         document.body.style.backgroundColor = `${colorName}`
+        //     }
+        // }
+        // const red = document.getElementById('red').onclick = dispalyColor('red')
+
+        // lexical scope or closure 
+        // `<button id="black">Black</button>
+        // <button id="red">Red</button>
+        // <button id="pink">Pink</button>`
+        // function colorHandler(color){
+        //     return function(){
+        //         document.body.style.backgroundColor =  `${color}`
+        //     }
+        // }
+        // document.getElementById('black').onclick = colorHandler('black')
+        // document.getElementById('red').onclick = colorHandler('red')
+        // document.getElementById('pink').onclick = colorHandler('pink')
+
+        // function outer(){
+        //     const name = 'google'
+        //     function dispalyName(){
+        //         console.log(name);
+        //     }
+        //     return dispalyName
+        // }
+        // const myValue = outer()
+        // console.log(myValue)
+        
+
+
+        // function init(){
+        //     let name = 'faisal'
+        //     function dispalyName(name){
+        //         console.log(name);
+        //     }
+        //     dispalyName('nawaz')
+        // }
+        // init()
+
+
+        // const links = document.querySelector('.link')
+        // const linkContainer = links.getBoundingClientRect().height;
+        // console.log(linkContainer);
+
+
+        // for(let i=1; i<4; i++){
+        //     if(i !== 3){
+        //         console.log(i);
+        //     }else{
+        //         console.log('Status OK');
+        //     }
+        // }
+
+        // const student = [10,20,30,40,50];
+
+        // const result = student.reduce(function(values, item){
+        //     let total = values + item
+        //     const bill = total.map((grandTotal)=>{
+        //        console.log(grandTotal + 10)
+        //     })
+        //     console.log(bill)
+        // },0)
+
+        // console.log(result)
+
+       
+
+
+        // let p = document.querySelector('p')
+
+        // let body = document.querySelector('body')
+        // p.addEventListener('click', (e)=>{
+        //     setTimeout(()=>{
+        //         console.log(e.target.tagName);
+        //     },1000)
+           
+        // })
+
+
+        // const generateColor = function(){
+        //     let hex = '0123456789ABCDEF'
+        //     let color = '#'
+        //     for(i=0; i<6; i++){
+        //         color += hex[Math.floor(Math.random() * 16)]
+        //     }
+        //     return color
+        // }
+        // let intervalID = '';
+        // const setColor = function(){
+        //     intervalID = setInterval(changeBg, 1000)
+        //     function changeBg(){
+        //         document.body.style.backgroundColor = generateColor()
+        //     }
+        // }
+
+        // const resetColor = function (){
+        //     clearInterval(intervalID)
+        //     console.log('stop')
+        // }
+
+        // document.querySelector('#start').addEventListener('click', setColor)
+        // document.querySelector('#stop').addEventListener('click', resetColor)
+
+        
+        
+
+        // const user = {
+        //     fname: 'faisal',
+        //     lname: 'nawaz',
+        //     fulllname: function(fname, lname){
+        //         return this.fname +' '+ this.lname
+        //     }
+        // }
+
+        // const user2 = {
+        //     fname: 'firoz',
+        //     lname: 'shahab'
+        // }
+
+        // const value = console.log(user.fulllname());
+
+
+        //Call and this.
+        // function setUsername(username){
+        //     this.username = username
+        // }
+        // function createUser(username, name, email, password){
+        //         setUsername.call(this,username)
+        //         // setUsername.call(this,dob)
+        //         this.name = name
+        //         this.email = email
+        //         this.password = password
+        // }
+
+        // const userCreated = new createUser('fais89','faisal','fais@example.com', 123)
+        // console.log(userCreated);
+
+
+
+        // const myPromise = new Promise((resolve, reject)=>{
+        //     setTimeout(()=>{
+        //         const test = true
+        //         if(!test){
+        //             resolve(
+        //                 {
+        //                     name: 'faisal',
+        //                     age: 30
+        //                 }
+        //             )
+        //         }
+        //         reject('ERROR: 502')
+        //     },1000)
+        // })
+        // myPromise.then((data)=>{
+        //     return  data.age
+        // }).then((myAge)=>{
+        //     console.log(myAge);
+        // }).catch((error)=>{
+        //     console.log(error)
+        // })
+
+        // const str = 'Faisal'
+
+        // String.prototype.capital = function(){
+        //     return this.toUpperCase()
+        // }
+        // console.log(str.capital());
+
+        // const user = {
+        //     name: 'faisal',
+        //     occupation: 'job',
+        //     loaction: 'Kolkata'
+        // }
+
+        // const userDetails = {
+        //     bob: '23/09/200',
+        //     age: 24,
+        //     postion: 'developer'
+        // }
+        
+        // Object.setPrototypeOf(user, userDetails)
+        // console.log(user.postion)
+
+
+
+        //Inheritance in JavaScript
+        // const user = {
+        //     username: 'faisal',
+        //     email: 'faisal@example.com'
+        // }
+
+        // const userDeatils = {
+        //     dob: '10/10/2000'
+        // }
+
+        // const info = Object.setPrototypeOf(user, userDeatils)
+        // console.log(user.dob);
+
+    // const body = document.querySelector('body')
+    // const h2 = document.querySelector('h2')
+    // const h3 = document.querySelector('h3')
+
+    // Node.prototype.bgColors = function(){
+    //     return this.style.color = '#FF0000'
+    // }
+    // console.log(h2.bgColors());
+    // console.log(h3.bgColors());
+
+   
+    // const arr2 = [1,2,3,4,5,6,7,8,9]
+    // const arr = [25,35,55,65,95,105]
+
+    // Array.prototype.arrayFilter = function(){
+    //    return this.filter(value => value > 95)
+    // }
+
+    // console.log(arr.arrayFilter());
+    // console.log(arr2.arrayFilter());
+    
+
+    // function createUser(username, score){
+    //     this.username = username
+    //     this.score = score
+    // }
+
+    // createUser.prototype.print = function(){
+    //        console.log(this.score)
+    // }
+    // const chai = new createUser('Score', 25)
+    // chai.print()
+
+
+    // function multiply(num){
+    //     return num*5
+    // }
+    // console.log(multiply(5));
+    // console.log(multiply.power = 2);
+    // console.log(multiply.prototype)
+      
+    
+    // const obj = {
+    //     name: 'faisal',
+    //     address: function(){
+    //         console.log('run object into the function')
+    //     },
+    // };
+    // // arr.shift(4)
+
+    // const fn = inti => {
+    //     console.log(2*2)
+    // }
+    // fn()
+
+    // (
+
+    // ((i) => console.log(i))(1);
+
+    //Prototype
+    // const arr = [1,2,3,4,5,6,7,8,9]
+    // Array.prototype.sum = function() {
+    //     return this.reduce((acc, itr) =>  acc + itr )
+    // }
+    // console.log(arr.sum());
+
+    // const str = 'faisal        '
+    // const str2 = '    Nawaz    '
+
+    // String.prototype.sum = function (){
+    //     return this.trim().length
+    // }
+    // console.log(str.sum());
+    // console.log(str2.sum());
+
+
+/*
+
+Here's what happens behind the scenes when the new keyword is used:
+
+A new object is created: The new keyword initiates the creation of a new JavaScript object.
+
+A prototype is linked: The newly created object gets linked to the prototype property of the constructor function. This means that it has access to properties and methods defined on the constructor's prototype.
+
+The constructor is called: The constructor function is called with the specified arguments and this is bound to the newly created object. If no explicit return value is specified from the constructor, JavaScript assumes this, the newly created object, to be the intended return value.
+
+The new object is returned: After the constructor function has been called, if it doesn't return a non-primitive value (object, array, function, etc.), the newly created object is returned.
+
+*/
+
+
+    </script>
+
+    
+
+</body>
+</html>

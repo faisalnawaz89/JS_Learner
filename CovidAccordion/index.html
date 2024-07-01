@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Test</title>
+    <style>
+   
+    h2{
+        background: #dddddd;
+        padding: 5px 15px;
+        font-size: 18px;
+        margin: 3px 0;
+        cursor: pointer;
+    }
+    h2>ul{
+        display: none;
+    }
+    h2.active ul{
+        display:block;
+    }
+    </style>
+</head>
+<body>
+    
+    <script>
+
+        const COVID_API = fetch('https://api.rootnet.in/covid19-in/stats/')
+        
+        async function fetchData (){
+            try {
+                
+                const response = await COVID_API
+                const data = await response.json()
+                console.log(data)
+                for(i=0; i<data.data.regional.length; i++){
+                    // console.log(data.data.regional[i].loc)
+                    let Location = data.data.regional[i].loc
+                    let CaseIndia = data.data.regional[i].confirmedCasesIndian
+                    let Discharged = data.data.regional[i].discharged
+                    let Deaths = data.data.regional[i].deaths
+                    let TotalConfirmed = data.data.regional[i].totalConfirmed
+                    let h2 = document.createElement('h2')
+                    h2.innerHTML = `${Location}`
+                    const ul = document.createElement('ul')
+                    const li = document.createElement('li')
+                    li.innerHTML = `Confirmed Cases in Indian: ${CaseIndia}`
+                    const li_1 = document.createElement('li')
+                    li_1.innerHTML = `Discharged: ${Discharged}`
+                    const li_2 = document.createElement('li')
+                    li_2.innerHTML = `Total Confirmed: ${TotalConfirmed}`
+                    document.body.appendChild(h2)
+                    h2.appendChild(ul)
+                    ul.appendChild(li)
+                    ul.appendChild(li_1)
+                    ul.appendChild(li_2)
+                    h2.addEventListener('click', (e)=>{
+                        if(e.target.tagName === 'H2'){
+                            h2.classList.toggle('active')
+                        }
+                    })
+                }
+
+
+            } catch (error) {
+                console.log(error);
+            }
+        }
+        fetchData()
+
+
+
+        //Inheritance in JavaScript
+        // const user = {
+        //     username: 'faisal',
+        //     email: 'faisal@example.com'
+        // }
+
+        // const userDeatils = {
+        //     dob: '10/10/2000'
+        // }
+
+        // const info = Object.setPrototypeOf(user, userDeatils)
+        // console.log(user.dob);
+
+    // const body = document.querySelector('body')
+    // const h2 = document.querySelector('h2')
+    // const h3 = document.querySelector('h3')
+
+    // Node.prototype.bgColors = function(){
+    //     return this.style.color = '#FF0000'
+    // }
+    // console.log(h2.bgColors());
+    // console.log(h3.bgColors());
+
+   
+    // const arr2 = [1,2,3,4,5,6,7,8,9]
+    // const arr = [25,35,55,65,95,105]
+
+    // Array.prototype.arrayFilter = function(){
+    //    return this.filter(value => value > 95)
+    // }
+
+    // console.log(arr.arrayFilter());
+    // console.log(arr2.arrayFilter());
+    
+
+    // function createUser(username, score){
+    //     this.username = username
+    //     this.score = score
+    // }
+
+    // createUser.prototype.print = function(){
+    //        console.log(this.score)
+    // }
+    // const chai = new createUser('Score', 25)
+    // chai.print()
+
+
+    // function multiply(num){
+    //     return num*5
+    // }
+    // console.log(multiply(5));
+    // console.log(multiply.power = 2);
+    // console.log(multiply.prototype)
+      
+    
+    // const obj = {
+    //     name: 'faisal',
+    //     address: function(){
+    //         console.log('run object into the function')
+    //     },
+    // };
+    // // arr.shift(4)
+
+    // const fn = inti => {
+    //     console.log(2*2)
+    // }
+    // fn()
+
+    // (
+
+    // ((i) => console.log(i))(1);
+
+    //Prototype
+    // const arr = [1,2,3,4,5,6,7,8,9]
+    // Array.prototype.sum = function() {
+    //     return this.reduce((acc, itr) =>  acc + itr )
+    // }
+    // console.log(arr.sum());
+
+    // const str = 'faisal        '
+    // const str2 = '    Nawaz    '
+
+    // String.prototype.sum = function (){
+    //     return this.trim().length
+    // }
+    // console.log(str.sum());
+    // console.log(str2.sum());
+
+
+/*
+
+Here's what happens behind the scenes when the new keyword is used:
+
+A new object is created: The new keyword initiates the creation of a new JavaScript object.
+
+A prototype is linked: The newly created object gets linked to the prototype property of the constructor function. This means that it has access to properties and methods defined on the constructor's prototype.
+
+The constructor is called: The constructor function is called with the specified arguments and this is bound to the newly created object. If no explicit return value is specified from the constructor, JavaScript assumes this, the newly created object, to be the intended return value.
+
+The new object is returned: After the constructor function has been called, if it doesn't return a non-primitive value (object, array, function, etc.), the newly created object is returned.
+
+*/
+
+
+    </script>
+
+    
+
+</body>
+</html>
