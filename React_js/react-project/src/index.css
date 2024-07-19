@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.modal{
+    display: none;
+    background: aliceblue;
+    padding: 25px 20px;
+    border-radius: 4px;
+    box-shadow: 4px 4px 5px 0px #00000014;
+    margin-top: 2rem;
+}
+.modal.open{
+    display: block!important;
+}
+.modal>button{
+    margin-top: 2rem;
+}

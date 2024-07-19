@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Javascript Test</title>
     <style>
+
         input{
             height:20px;
             padding: 5px;
@@ -15,6 +16,22 @@
         .dark{
             background-color: #000;
         }
+        .grid{
+            display: grid;
+            grid-template-columns: repeat(4, 200px);
+            justify-content: center;
+            align-items: center;
+            height: 200px;
+            grid-gap: 7px;
+        }
+        .grid>div{
+            background: red;
+            height: 200px;
+            align-items: center;
+            justify-content: center;
+            display: grid;
+        }
+        .green{background: aqua!important;}
     </style>
 </head>
 <body>
@@ -47,18 +64,48 @@
 
     </div> -->
 
-    <button id="darkMode"></button>
+    <!-- <button id="darkMode">Light Mode</button> -->
+
+    <div class="grid">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+    </div>
 
     <script>
-        const darkMode = document.getElementById('darkMode')
-        darkMode.addEventListener('click', ()=>{
-            document.body.classList.toggle('dark')
-            if(document.body.classList.contains('dark')){
-                darkMode.innerHTML = 'Dark Mode'
-            }else{
-                darkMode.innerHTML = 'Light Mode'
-            }
+
+        const grid = document.querySelectorAll('.grid')
+        grid.forEach((box)=>{
+            console.log(box);
+            const btn = box.querySelectorAll('.grid>div')
+            box.addEventListener('click', (e)=>{
+                btn.forEach((item)=>{
+                    console.log(item);
+                    if(item !== box){
+                       item.classList.remove('green');
+                    }
+                })
+                e.target.classList.toggle('green')
+            })
         })
+
+        
+
+        // const arr = [1,2,3,3,3,4,4,5,5,6,6,6,7,7,7,8,8,8]
+        // const neSet = [...new Set(arr)]
+        // console.log(neSet);//filter or unique value returns
+
+
+        // const darkMode = document.getElementById('darkMode')
+        // darkMode.addEventListener('click', ()=>{
+        //     document.body.classList.toggle('dark')
+        //     if(document.body.classList.contains('dark')){
+        //         darkMode.innerHTML = 'Dark Mode'
+        //     }else{
+        //         darkMode.innerHTML = 'Light Mode'
+        //     }
+        // })
         // const number = [1,2,3,4,5]
         // number[10] = 11
         // console.log(number);

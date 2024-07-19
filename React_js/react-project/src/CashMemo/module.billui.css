@@ -1,0 +1,49 @@
+.customWidth{
+    width: 450px;
+    margin: auto;
+    background: #f9f9f9;
+    border-radius: 4px;
+    padding: 25px;
+}
+.form-input{
+    width: 100%;
+    height: 40px;
+    border: 1px solid #c5c5c5;
+    border-radius: 4px;
+    padding: 0 12px;
+    margin-bottom: .5rem;
+}
+
+.customWidth h3{
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+.addbtn{
+    background: #3c66e3;
+    color: #fff;
+    padding: 7px 20px;
+    width: 100%;
+    border-radius: 4px;
+    margin: 0px 0px 10px;
+}
+
+.gridX3{
+    display: grid;
+    grid-template-columns: auto 66px 30px 20px;
+    justify-content: stretch;
+    padding: 8px 20px;
+    background: #fff;
+    margin: 0.5rem 0;
+    border-radius: 4px;
+    align-items: center;
+}
+
+.gridX1{
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 15px 0;
+}
+.delIcon{
+    cursor: pointer;
+}
