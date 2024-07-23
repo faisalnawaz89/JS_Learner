@@ -66,29 +66,93 @@
 
     <!-- <button id="darkMode">Light Mode</button> -->
 
-    <div class="grid">
+    <!-- <div class="grid">
         <div>1</div>
         <div>2</div>
         <div>3</div>
         <div>4</div>
-    </div>
+    </div> -->
 
     <script>
 
-        const grid = document.querySelectorAll('.grid')
-        grid.forEach((box)=>{
-            console.log(box);
-            const btn = box.querySelectorAll('.grid>div')
-            box.addEventListener('click', (e)=>{
-                btn.forEach((item)=>{
-                    console.log(item);
-                    if(item !== box){
-                       item.classList.remove('green');
-                    }
-                })
-                e.target.classList.toggle('green')
-            })
-        })
+    // function findLargestNumber(arr) {
+    //     return Math.max(...arr);
+    // }
+
+    // console.log(findLargestNumber([1, 2, 3, 4, 5])); // Output: 5
+
+
+    function largeNumber(arr){
+        let largest = arr[0]
+        for(let i = 0; i < arr.length; i++){
+            if(arr[i] > largest){
+                largest = arr[i]
+            }
+        }
+        return largest
+    }
+    console.log(largeNumber([1,2,3,4,5]));
+
+    // async function fetchData() {
+    //     try {
+    //         let response = await fetch('https://dummyjson.com/users');
+    //         let data = await response.json();
+    //         const mydata = data.users.map(value => console.log(value.firstName))
+    //     } catch (error) {
+    //         console.error('Error fetching data:', error);
+    //     }
+    // }
+
+    // fetchData();
+
+
+        // function obj({name, age, proffession: job}){
+        //     console.log(`hello my name is ${name} and age is ${age} and i am proffessional ${job}`);
+        // }
+        // const profile = {
+        //     name: 'faisal',
+        //     age: 30,
+        //     proffession: 'web developer'
+        // }
+        // obj(profile)
+
+    // const numbers = [1, 2, 3, 4];
+    // const [first, second, ...third] = numbers;
+    // console.log(first,second,third);
+        
+        // const name = 'I love Nadia'
+        // const age = 20
+        // console.log(name + ', Age:' + age);
+    // function run (){
+    //     console.log('run the execution in Promises')
+    // }
+    // console.log('Start'); // first execute becouse it is synchronous
+
+    // setTimeout(() => {
+    //     console.log('Timeout'); // fourth execute becouse it is macrotask are always executed after excecution of microtask
+    // }, 0);
+
+    // Promise.resolve().then(() => { // third execute becouse it is microtask
+    //     run()
+    // });
+
+    // console.log('End'); // second execute becouse it is also synchronous
+
+
+        // const grid = document.querySelectorAll('.grid')
+        // grid.forEach((box)=>{
+        //     console.log(box);
+        //     const btn = box.querySelectorAll('.grid>div')
+        //     box.addEventListener('click', (e)=>{
+        //         btn.forEach((item)=>{
+        //             console.log(item);
+        //             if(item !== box){
+        //                item.classList.remove('green');
+        //             }
+        //         })
+        //         e.target.classList.toggle('green')
+        //     })
+        // })
 
         
 
