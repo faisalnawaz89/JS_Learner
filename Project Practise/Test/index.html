@@ -74,6 +74,77 @@
     </div> -->
 
     <script>
+        let originalArray = [1, 2, [3, 4]];
+
+// Shallow copy using slice
+let shallowCopy = originalArray.slice();
+
+// Modifying the nested array in the shallow copy
+shallowCopy[2][0] = 99;
+
+console.log(originalArray); // Output: [1, 2, [99, 4]]
+console.log(shallowCopy);   // Output: [1, 2, [99, 4]]
+
+
+    //function greet(name, newFun) {
+       // console.log('Hi ' + name);
+       // newFun()
+   // }
+
+   // function callMe() {
+      //  console.log('I am callback function');
+   // }
+
+    //greet('Faisal', callMe);
+
+
+    // function greet(name) {
+    //     console.log('Hello ' + name);
+    // }
+
+    // function processUserInput(a) {
+    //     const name = 'Faisal';
+    //     a(name);
+    // }
+
+    // processUserInput(greet);
+
+
+    // function recursiveFunction() {
+    //     recursiveFunction()
+    // }
+
+    //recursiveFunction(); // Yeh stack overflow cause karega
+   
+
+
+    // function firstFunction() {
+    //     console.log('Inside firstFunction');
+    //     secondFunction();
+    //     console.log('Exiting firstFunction');
+    // }
+
+    // function secondFunction() {
+    //     console.log('Inside secondFunction');
+    // }
+
+    // console.log('Start');
+    // firstFunction();
+    // console.log('End');
+
+    // async function* asyncNumberGenerator() {
+    //     yield await new Promise(resolve => setTimeout(() => resolve(1), 1000));
+    //     yield await new Promise(resolve => setTimeout(() => resolve(2), 1000));
+    //     yield await new Promise(resolve => setTimeout(() => resolve(3), 1000));
+    // }
+
+    // const asyncGenerator = asyncNumberGenerator();
+
+    // (async () => {
+    //     for await (const value of asyncGenerator) {
+    //         console.log(value); // Output: 1, 2, 3 (one by one with 1 second delay each)
+    //     }
+    // })();
 
     // function findLargestNumber(arr) {
     //     return Math.max(...arr);
@@ -81,17 +152,28 @@
 
     // console.log(findLargestNumber([1, 2, 3, 4, 5])); // Output: 5
 
+    // function* generator(){
+    //     yield 1
+    //     yield 2
+    //     yield 3
+    // }
+    // const value = generator()
+    // console.log(value.next().value);//1
+    // console.log(value.next().value);//2
+    // console.log(value.next().value);//3
+    // console.log(value.next().value);//undefined
 
-    function largeNumber(arr){
-        let largest = arr[0]
-        for(let i = 0; i < arr.length; i++){
-            if(arr[i] > largest){
-                largest = arr[i]
-            }
-        }
-        return largest
-    }
-    console.log(largeNumber([1,2,3,4,5]));
+
+    // function largeNumber(arr){
+    //     let largest = arr[0]
+    //     for(let i = 0; i < arr.length; i++){
+    //         if(arr[i] > largest){
+    //             largest = arr[i]
+    //         }
+    //     }
+    //     return largest
+    // }
+    // console.log(largeNumber([1,2,3,4,5]));
 
     // async function fetchData() {
     //     try {
