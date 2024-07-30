@@ -32,6 +32,12 @@
             display: grid;
         }
         .green{background: aqua!important;}
+        .container{
+
+        }
+        .addItem{
+
+        }
     </style>
 </head>
 <body>
@@ -72,18 +78,114 @@
         <div>3</div>
         <div>4</div>
     </div> -->
+    <!-- <button id="red">Color</button> -->
+
+    <div class="container">
+        <form>
+             <input type="text" id="todoValue" placeholder="Add Item">
+             <button id='submit' type="submit">Add Item</button>
+        </form>
+        <div class="addItem">
+
+        </div>
+    </div>
 
     <script>
-        let originalArray = [1, 2, [3, 4]];
+    const submit = document.getElementById('submit')
+    const todoValue = document.querySelector('#todoValue')
+    const addItem = document.querySelector('.addItem')
+    let data = []
+    let editTodo = null
 
-// Shallow copy using slice
-let shallowCopy = originalArray.slice();
+   const Todoitem = (e) => {
+    e.preventDefault()
+        const addTodo = todoValue.value
+        if(addTodo){
+            if(editTodo !== null){
+                data[editTodo] = addTodo
+                editTodo = null
+            }else{
+                data.push(addTodo)
+            }
+            todoValue.value = ''
+            showData()
+        }
+        
+   }
+   const showData = () => {
+        let todoList = data.map((value, index)=>{
+            return `<h1>${value} <button onclick=removeData(${index})>delete</button><button onclick=editTodoItem(${index})>Edit</button></h1>`
+        }).join('')
+        addItem.innerHTML = todoList
+   }
 
-// Modifying the nested array in the shallow copy
-shallowCopy[2][0] = 99;
+   const removeData = (index) => {
+        // Process - 1
+        // data = data.filter((_,i) => i !== index)
+        data.splice(index,1)
+        showData()
+   }
 
-console.log(originalArray); // Output: [1, 2, [99, 4]]
-console.log(shallowCopy);   // Output: [1, 2, [99, 4]]
+   const editTodoItem = (i) => {
+        todoValue.value = data[i]
+        editTodo = i
+   }
+
+   submit.addEventListener('click', Todoitem)
+
+
+
+    // let emoji = '😊';
+    // console.log(emoji.charCodeAt(0)); // Output: 55357 (high surrogate)
+    // console.log(emoji.charCodeAt(1)); // Output: 56842 (low surrogate)
+    // console.log(emoji.length) // output: is 2
+    // console.log(emoji)
+
+    // let foo = null ?? 'default string';
+    // console.log(foo); // Output: 'default string'
+
+    // let bar = undefined ?? 'default string';
+    // console.log(bar); // Output: 'default string'
+
+    // let baz = 0 ?? 'default string';
+    // console.log(baz); // Output: 0
+
+    // let qux = '' ?? 'default string';
+    // console.log(qux); // Output: ''
+
+    // let x = 1;
+
+    // x = -x;
+    // alert( x ); // -1, unary negation was applied
+
+    // let x = 1, y = 3;
+    // alert( y - x ); // 2, binary minus subtracts values
+
+    // alert( 'Z' > 'X' ); // true
+    // alert( 'Glow' > 'Glee' ); // true
+    // alert( 'Bee' > 'Be' ); // true
+    // function dispalyColor(color){
+    //     console.log('first stack');
+    //     // dispalyColor()
+    //     return function(){
+    //         document.body.style.backgroundColor = `${color}`
+            
+    //     }
+        
+    // }
+    // dispalyColor()
+    // document.getElementById('red').onclick = dispalyColor('red')
+
+//let originalArray = [1, 2, [3, 4]];
+
+// // Shallow copy using slice
+// let shallowCopy = originalArray.slice();
+
+// // Modifying the nested array in the shallow copy
+// shallowCopy[2][0] = 99;
+
+// console.log(originalArray); // Output: [1, 2, [99, 4]]
+// console.log(shallowCopy);   // Output: [1, 2, [99, 4]]
 
 
     //function greet(name, newFun) {
