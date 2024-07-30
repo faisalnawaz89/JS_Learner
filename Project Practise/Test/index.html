@@ -38,6 +38,10 @@
         .addItem{
 
         }
+        .completed {
+            text-decoration: line-through;
+            color: grey;
+        }
     </style>
 </head>
 <body>
@@ -85,16 +89,14 @@
              <input type="text" id="todoValue" placeholder="Add Item">
              <button id='submit' type="submit">Add Item</button>
         </form>
-        <div class="addItem">
-
-        </div>
+        <div class="addItem"></div>
     </div>
 
     <script>
     const submit = document.getElementById('submit')
     const todoValue = document.querySelector('#todoValue')
     const addItem = document.querySelector('.addItem')
-    let data = []
+    let data = JSON.parse(localStorage.getItem('SaveTodoData')) || []
     let editTodo = null
 
    const Todoitem = (e) => {
@@ -102,19 +104,26 @@
         const addTodo = todoValue.value
         if(addTodo){
             if(editTodo !== null){
-                data[editTodo] = addTodo
+                data[editTodo].text = addTodo
+                submit.textContent = 'Add Item'
+                todoValue.value = ''
                 editTodo = null
             }else{
-                data.push(addTodo)
+                data.push({text:addTodo, completed:false})
             }
             todoValue.value = ''
             showData()
+            saveToLocalstroge()
         }
         
    }
    const showData = () => {
         let todoList = data.map((value, index)=>{
-            return `<h1>${value} <button onclick=removeData(${index})>delete</button><button onclick=editTodoItem(${index})>Edit</button></h1>`
+            return `<h1 class="${value.completed ? 'completed' : ''}" 
+            onclick=completeTodo(${index})> ${value.text} 
+            <button onclick=removeData(${index})>delete</button>
+            <button onclick=editTodoItem(${index})>Edit</button>
+            </h1>`
         }).join('')
         addItem.innerHTML = todoList
    }
@@ -124,14 +133,27 @@
         // data = data.filter((_,i) => i !== index)
         data.splice(index,1)
         showData()
+        saveToLocalstroge()
    }
 
    const editTodoItem = (i) => {
-        todoValue.value = data[i]
+        todoValue.value = data[i].text
         editTodo = i
+        submit.textContent = 'Update'
    }
 
+   const completeTodo = (index) => {
+        data[index].completed = !data[index].completed
+        showData()
+        saveToLocalstroge()
+   }
+
+   const saveToLocalstroge = () => {
+        localStorage.setItem('SaveTodoData', JSON.stringify(data))
+   } 
+
    submit.addEventListener('click', Todoitem)
+   document.addEventListener('DOMContentLoaded', showData)
 
 
 
