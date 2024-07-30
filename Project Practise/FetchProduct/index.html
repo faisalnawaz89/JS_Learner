@@ -23,6 +23,15 @@
         border-radius: 25px 25px;
         margin-bottom: 25px;
       }
+      .product-container {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          column-gap: 2rem;
+      }
+      .filter {
+        text-align: center;
+        margin-bottom: 30px;
+    }
     </style>
   </head>
   <body>
@@ -33,17 +42,16 @@
         <div class="title-underline"></div>
       </div>
       <!-- products -->
-       <div class="product-container">
+      
         <div class="filter">
           <form class="form-submit">
             <input type="text" placeholder="search..." id="input-search">
           </form>
-          <h4>Filter</h4>
           <div class="list">
             <a href="#" data-id="all">All</a>
           </div>
         </div>
-      </div>
+      
       <div class="products-center"></div>
     </section>
     <script src="./script.js"></script>
