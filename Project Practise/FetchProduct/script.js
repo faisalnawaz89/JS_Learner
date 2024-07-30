@@ -28,7 +28,7 @@ const setProduct = (list) => {
         </a>`
     }).join('')
 
-    productCenter.innerHTML = `<dic class="product-container">${displayProduct}</div>`
+    productCenter.innerHTML = `<div class="product-container">${displayProduct}</div>`
 }
 
 //Create Filter menu using map and addeventListner method
