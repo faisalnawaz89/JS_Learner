@@ -13,8 +13,14 @@ export default function TodoApp() {
     const getTodoData = (e) => {
         e.preventDefault();
         const getAppData = e.target.todoApp.value;
-        const showData = [...todo, { text: getAppData, completed: false }];
-        setTodo(showData);
+        
+        if(getAppData == ''){
+            alert('Please add your items')
+        }else{
+            const showData = [...todo, { text: getAppData, completed: false }];
+            setTodo(showData);
+        }
+        
         e.target.todoApp.value = '';
     };
 

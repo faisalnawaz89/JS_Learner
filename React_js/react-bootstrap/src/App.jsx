@@ -13,7 +13,6 @@ export default function App (){
   }
 
   const handleNewItem = (itemName, itemDueDate) => {
-    console.log(`New Item Added: ${itemName} Date:${itemDueDate}`);
     const newTodoItems = [
       ...todoItems,
       { name: itemName, dueDate: itemDueDate },
