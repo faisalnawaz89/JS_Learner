@@ -1,5 +1,6 @@
 
 import TodoItems from './components/TodoItems'
+import AddTodo from './components/AddTodo'
 import './App.css'
 import { useState } from 'react'
 
@@ -13,6 +14,7 @@ export default function App (){
   }
 
   const handleNewItem = (itemName, itemDueDate) => {
+    console.log(`New Item Added: ${itemName} Date:${itemDueDate}`);
     const newTodoItems = [
       ...todoItems,
       { name: itemName, dueDate: itemDueDate },
