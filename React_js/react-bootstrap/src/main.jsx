@@ -17,10 +17,10 @@ root.render(
   <React.StrictMode>
     {/* <Counter />  */}
     {/* <ChangeColor /> */}
-    <Page />
+    {/* <Page /> */}
     {/* <Accordion /> */}
     {/* <TabMenu/> */}
     {/* <HambergerMenu/> */}
-    {/* <TodoApp /> */}
+    <TodoApp />
   </React.StrictMode>,
 )
